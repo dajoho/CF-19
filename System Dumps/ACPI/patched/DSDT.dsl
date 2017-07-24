@@ -5778,18 +5778,19 @@ DefinitionBlock ("", "DSDT", 1, "MATBIO", "CF19-5  ", 0x00000000)
         \_SB.CETP ()
         If (CondRefOf (\_TZ.PTMD))
         {
-            \_SB.PTMD.IECD (\_SB.PTMD.PM23 (), \_SB.PTMD.PM24 (), \_SB.PTMD.PM25 (), \_SB.PTMD.EDPM (), \_SB.PTMD.IOSD (\_SB.PTMD.SOSD ()), If (CondRefOf (\_TZ.DPPM))
+            \_SB.PTMD.IECD (\_SB.PTMD.PM23 (), \_SB.PTMD.PM24 (), \_SB.PTMD.PM25 (), \_SB.PTMD.EDPM (), \_SB.PTMD.IOSD (\_SB.PTMD.SOSD ()))
+            If (CondRefOf (\_TZ.DPPM))
+            {
+                \_SB.DPPM.IECD ()
+                \_SB.RSAX ()
+                \_SB.DPPM.IOSD ()
+                \_SB.DPPM.SOSD ()
+                If (\_SB.DPPM.WA0E)
                 {
-                    \_SB.DPPM.IECD ()
-                    \_SB.RSAX ()
-                    \_SB.DPPM.IOSD ()
-                    \_SB.DPPM.SOSD ()
-                    If (\_SB.DPPM.WA0E)
-                    {
-                        \_SB.DPPM.WAN0 = 0x01
-                        \_SB.DPPM.WAM0 ()
-                    }
-                })
+                    \_SB.DPPM.WAN0 = 0x01
+                    \_SB.DPPM.WAM0 ()
+                }
+            }
         }
 
         \_SB.PCI0.LPCB.EC0.EC48 ()
