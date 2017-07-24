@@ -1,0 +1,24 @@
+[PCI Devices] <- SIV64X - System Information Viewer V5.21 USER-PC::user
+
+Location    Vendor-Dev-Sub_OEM-Rev  Class    Windows Description (PCI Description) - Showing 18 of 18 from \\USER-PC\HKLM\System\CurrentControlSet\Enum
+
+|0 - 00 - 0|8086-0104-833810F7-09   System   2nd generation Intel® Core™ processor family DRAM Controller - 0104 (Intel Core i7/i5/i3 DRAM Controller)
+|0 - 02 - 0|8086-0126-833810F7-09   Display  Intel® HD Graphics Family (Intel Core i7/i5/i3 Integrated Graphics Controller)
+|0 - 22 - 3|8086-1C3D-833810F7-04   Ports    Intel® Active Management Technology - SOL (COM4) (Intel 6 Series Chipset Family KT Controller)
+|0 - 25 - 0|8086-1502-833810F7-04   Net      Intel® 82579LM Gigabit Network Connection (Intel 82579LM Gigabit Network Connection)
+|0 - 26 - 0|8086-1C2D-833810F7-04   USB      Intel® 6 Series/C200 Series Chipset Family USB EHCI Host Controller - 1C2D (Intel 6 Series Chipset Family USB EHCI Controller #2)
+|0 - 27 - 0|8086-1C20-833810F7-04   System   High Definition Audio Controller (Intel 6 Series Chipset Family High Definition Audio Controller)
+|0 - 28 - 0|8086-1C10-833810F7-B4   System   Intel® 6 Series/C200 Series Chipset Family PCI Express Root Port 1 - 1C10 (Intel 6 Series Chipset Family PCIe Port 1)
+|0 - 28 - 2|8086-1C14-833810F7-B4   System   Intel® 6 Series/C200 Series Chipset Family PCI Express Root Port 3 - 1C14 (Intel 6 Series Chipset Family PCIe Port 3)
+|0 - 28 - 3|8086-2448-833810F7-B4   System   Intel® 82801 PCI Bridge - 2448 (Intel 82801 Family (ICH2/3/4/5/6/7/8/9-M) Hub Interface to PCI Bridge)
+|0 - 29 - 0|8086-1C26-833810F7-04   USB      Intel® 6 Series/C200 Series Chipset Family USB EHCI Host Controller - 1C26 (Intel 6 Series Chipset Family USB EHCI Controller #1)
+|0 - 31 - 0|8086-1C4F-833810F7-04   System   Intel® QM67 Express Chipset Family LPC Interface Controller - 1C4F (Intel QM67 Chipset Family LPC Controller)
+|0 - 31 - 2|8086-1C03-833810F7-04   hdc      Intel® 6 Series/C200 Series Chipset Family 6 Port SATA AHCI Controller - 1C03 (Intel 6 Series Chipset Family 6 port SATA AHCI Controller)
+|0 - 31 - 3|8086-1C22-833810F7-04   System   Intel® 6 Series/C200 Series Chipset Family SMBus Controller - 1C22 (Intel 6 Series Chipset Family SMBus Controller)
+|0 - 31 - 6|8086-1C24-833810F7-04   System   Intel® 6 Series/C200 Series Chipset Family Thermal Control - 1C24 (Intel 6 Series Chipset Family Thermal Management Controller)
+|9 - 00 - 0|168C-002A-0200168C-01   Net      Dell Wireless 1515 Wireless-N Adapter (D-Link Wireless 1515 Wireless-N Adapter)
+|10 - 00 - 0|1180-E476-833810F7-02  PCMCIA   Generic CardBus Controller (Ricoh CardBus Bridge)
+|10 - 00 - 1|1180-E823-833810F7-00  SDHost   SDA Standard Compliant SD Host Controller (Ricoh PCIe SDXC/MMC Host Controller)
+|10 - 00 - 4|1180-E832-833810F7-03  1394     Ricoh 1394 OHCI Compliant Host Controller (Ricoh FireWire Host Controller)
+
+[  OK ]  [ Copy]   [Windows]  [Machine]  [UAA Dev]  [USB Bus]   [Network]  [ SPD ]  [Partitions][PNP Dev] [Volumes]  [Drives]   [PCI Bus]  [PCI Dev]  [ALL Dev]
