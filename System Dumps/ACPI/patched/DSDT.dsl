@@ -82,6 +82,35 @@ DefinitionBlock ("", "DSDT", 1, "MATBIO", "CF19-5  ", 0x00000000)
     External (TNT0, MethodObj)    // 0 Arguments
     External (TNT1, MethodObj)    // 0 Arguments
 
+Method (DTGP, 5, NotSerialized)
+    {
+        If (LEqual (Arg0, ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b")))
+        {
+            If (LEqual (Arg1, One))
+            {
+                If (LEqual (Arg2, Zero))
+                {
+                    Store (Buffer (One)
+                        {
+                             0x03                                           
+                        }, Arg4)
+                    Return (One)
+                }
+
+                If (LEqual (Arg2, One))
+                {
+                    Return (One)
+                }
+            }
+        }
+
+        Store (Buffer (One)
+            {
+                 0x00                                           
+            }, Arg4)
+        Return (Zero)
+    }
+
     Name (SS1, 0x01)
     Name (SS2, 0x00)
     Name (SS3, 0x01)
@@ -6102,6 +6131,120 @@ DefinitionBlock ("", "DSDT", 1, "MATBIO", "CF19-5  ", 0x00000000)
         Device (GFX0)
         {
             Name (_ADR, 0x00020000)  // _ADR: Address
+            
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+            {
+                Store (Package (0x1E)
+                    {
+                        "device_type", 
+                        Buffer (0x08)
+                        {
+                            "display"
+                        }, 
+
+                        "built-in", 
+                        Buffer (One)
+                        {
+                             0x01                                           
+                        }, 
+
+                        "AAPL00,backlight-control", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00                         
+                        }, 
+
+                        "AAPL,snb-platform-id", 
+                        Buffer (0x04)
+                        {
+                             0x00, 0x00, 0x01, 0x00                         
+                        }, 
+
+                        "AAPL00,blackscreen-preferences", 
+                        Buffer (0x04)
+                        {
+                             0x00, 0x00, 0x00, 0x08                         
+                        }, 
+
+                        "VRAM,totalsize", 
+                        Buffer (0x04)
+                        {
+                             0x00, 0x00, 0x00, 0x20                         
+                        }, 
+
+                        "device-id", 
+                        Buffer (0x04)
+                        {
+                             0x26, 0x01, 0x00, 0x00                         
+                        }, 
+
+                        "vendor-id", 
+                        Buffer (0x04)
+                        {
+                             0x86, 0x80, 0x00, 0x00                         
+                        }, 
+
+                        "model", 
+                        Buffer (0x17)
+                        {
+                            "Intel HD Graphics 3000"
+                        }, 
+
+                        "AAPL,HasLid", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00                         
+                        }, 
+
+                        "AAPL,HasPanel", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00                         
+                        }, 
+
+                        "AAPL,NumDisplays", 
+                        Buffer (0x04)
+                        {
+                             0x02, 0x00, 0x00, 0x00                         
+                        }, 
+
+                        "AAPL,NumFramebuffers", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00                         
+                        }, 
+
+                        "AAPL,DualLink", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00                         
+                        }, 
+
+                        "AAPL00,override-no-edid", 
+                        Buffer (0x80)
+                        {
+                            /* 0000 */  0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00,
+                            /* 0008 */  0x36, 0x7F, 0x03, 0x00, 0x03, 0x00, 0x00, 0x00,
+                            /* 0010 */  0x00, 0x15, 0x01, 0x03, 0x80, 0x15, 0x10, 0xFF,
+                            /* 0018 */  0x2F, 0x00, 0x00, 0xA0, 0x57, 0x49, 0x9B, 0x26,
+                            /* 0020 */  0x10, 0x48, 0x4F, 0x00, 0x00, 0x00, 0x01, 0x01,
+                            /* 0028 */  0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
+                            /* 0030 */  0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x64, 0x19,
+                            /* 0038 */  0x00, 0x20, 0x41, 0x00, 0x3A, 0x30, 0x18, 0x88,
+                            /* 0040 */  0x36, 0x00, 0xD2, 0x9E, 0x00, 0x00, 0x00, 0x18,
+                            /* 0048 */  0x00, 0x00, 0x00, 0xFC, 0x00, 0x31, 0x30, 0x32,
+                            /* 0050 */  0x34, 0x78, 0x37, 0x36, 0x38, 0x0A, 0x20, 0x20,
+                            /* 0058 */  0x20, 0x20, 0x00, 0x00, 0x00, 0xFD, 0x00, 0x00,
+                            /* 0060 */  0x3C, 0x00, 0x86, 0x07, 0x00, 0x00, 0x00, 0x00,
+                            /* 0068 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            /* 0070 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            /* 0078 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xD1 
+                        }
+                    }, Local0)
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                Return (Local0)
+            }
+            
             Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
             {
                 DSEN = And (Arg0, 0x07)
